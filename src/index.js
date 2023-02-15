@@ -14,11 +14,11 @@
  * @param numbers array de inteiros ou sub-arrays
  * @returns novo array, somente com os valores
  */
+//Infelizmente esse codigo nao passou nos teste rodando ele na minha maquina para os vetores informado deu certo
 function flatten(array) {
   let arraySaida = [];
   for (let i = 0; i < array.length; i++) {
     const element = array[i];
-
     if (Array.isArray(element)) {
       for (let elementoArray of element) {
         arraySaida.push(elementoArray);
@@ -28,5 +28,26 @@ function flatten(array) {
   }
   return arraySaida;
 }
+/*
+
+function verificaElemento(i, entrada, saida) {
+  if (i >= entrada.length) return;
+
+  if (Array.isArray(entrada[i])) {
+    verificaElemento(0, entrada[i], saida);
+  } else {
+    saida.push(entrada[i]);
+  }
+
+  verificaElemento(i + 1, entrada, saida);
+}
+
+function flatten(entrada) {
+  let saida = [];
+  verificaElemento(0, entrada, saida);
+
+  return saida;
+}
+*/
 
 module.exports = flatten;
